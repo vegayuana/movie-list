@@ -15,7 +15,7 @@ const styles = (theme) => ({
     }
   },
   detail:{
-    marginTop: 30,
+    margin: '30px 20px 0',
     ['@media (max-width:767px)']: {
       textAlign: 'center'
     },
@@ -27,7 +27,15 @@ const styles = (theme) => ({
       },
       '& h1':{
         fontSize: '2.8rem',
-        margin: 0
+        margin: 0,
+        ['@media (max-width:767px)']: {
+          fontSize: '2rem',
+          lineHeight: '1.8rem',
+          margin: '20px 0 10px'
+        },
+        ['@media (max-width:1299px)']: {
+          fontSize: '1.7rem',
+        },
       },
       '& .bullet':{
         fontSize: '0.5rem',
@@ -40,12 +48,39 @@ const styles = (theme) => ({
       '& table':{
         textAlign: 'left',
         '& td, & th':{
-          paddingBottom: 15
+          paddingBottom: 15,
+          verticalAlign: 'top'
         },
         '& td':{
           paddingLeft: 25
         }
+      },
+      '& .wide-screen':{
+        '& h2':{
+          color: theme.colors.text
+        },
+        textAlign: 'left',
+        ['@media (min-width:768px)']: {
+          display: 'none',
+        },
+        ['@media (min-width:1300px)']: {
+          display: 'block',
+        },
       }
+    },
+    '& .medium-screen':{
+      display: 'none',
+      ['@media (min-width:768px)']: {
+        display: 'block',
+        textAlign: 'center',
+        marginBottom: 20,
+        '& h2':{
+          color: theme.colors.text
+        },
+      },
+      ['@media (min-width:1300px)']: {
+        display: 'none',
+      },
     },
     '& .img-wrapper':{
       maxWidth: 400,
@@ -66,6 +101,7 @@ const styles = (theme) => ({
         fontSize: '2rem',
         textAlign: 'center',
         color: theme.colors.text,
+        margin: 0
       },
       '& h4':{
         fontSize: '1.5rem',
@@ -76,19 +112,28 @@ const styles = (theme) => ({
         fontSize: '1.8rem'
       },
       '& .ratings':{
-        display: 'grid',
-        gridTemplateColumns: 'auto auto auto'
+        display:'flex',
+        flexWrap: 'wrap',
+        justifyContent: 'center'
       },
       '& .card':{
         borderRadius: 8,
         textAlign: 'center',
-        margin: 20,
+        margin: '10px 10px',
         padding: 20,
+        width: '100%',
         border: `1px solid ${theme.colors.secondary}`,
         '& svg':{
           fontSize: '2rem',
           color: theme.colors.primary
-        }
+        },
+        ['@media (min-width:768px)']: {
+          width: 150,
+          margin: 20,
+        },
+        ['@media (min-width:1300px)']: {
+          width: 200,
+        },
       },
       '& .card:first-child':{
         '& svg':{

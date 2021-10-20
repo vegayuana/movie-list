@@ -81,9 +81,15 @@ export const MovieDetail = (props) => {
                   </tr>
                 ))}
               </table>
-              <h2>Plot</h2>
-              <p>{get(movie, 'Plot')}</p>
+              <div className={'wide-screen'}>
+                <h2>Plot</h2>
+                <p>{get(movie, 'Plot')}</p>
+              </div>
             </div>
+          </div>
+          <div className={'medium-screen'}>
+            <h2>Plot</h2>
+            <p>{get(movie, 'Plot')}</p>
           </div>
           <div className={'bottom'}>
             <h3>Awards</h3>

@@ -15,6 +15,7 @@ const styles = (theme) => ({
     },
     '& .img-wrapper':{
       width: 100,
+      minWidth: 100,
       marginRight: 20,
       '& img':{
         width: '100%',
@@ -30,12 +31,16 @@ const styles = (theme) => ({
           fontSize: '1.5rem',
         },
       },
+      '& p':{
+        margin: 0
+      },
       '& .tag':{
         backgroundColor: theme.colors.primary,
         borderRadius: 30,
         width: 80,
         minWidth: 80,
         height: 30,
+        marginLeft: 10,
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'center',
